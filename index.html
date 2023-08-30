@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>absolute:home</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar-container">
+            <div class="logo" id="logo">
+                <img src="images/ABSOLUTE.svg" alt="Logo">
+            </div class="box-menu">
+                <button id="menu-button"><span id="menu-text">//</span></button>
+                <ul id="nav-menu-items">
+                    <li class="nav-item"><a href="index.html" class="nav-links">home</a></li>
+                    <li class="nav-item"><a href="projects.html" class="nav-links">projects</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-links">shop</a></li>
+                    <li class="nav-item"><a href="repository.html" class="nav-links">repository</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-links">about</a></li>
+                </ul>
+            <div class="playercontainer">
+                <div class="custom-audio-player">
+                    <audio id="audio" src="music/RIKI 2OH2- SIDE1 (TAPE).mp3" autoplay></audio>
+                    <img id="play-pause-button" src="icons/pause.svg">
+                    <input type="range" id="seek-bar" min="0" value="0">
+                </div>    
+            </div>    
+        </nav>
+    </header>
+    <main>
+        <article id="main-content">
+            <figure class="content" id="main-artwork">
+                <img src="images/reescaled.jpg" alt="mainartwork" id="artwork">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde accusamus a! Nobis mollitia quo commodi velit! Iusto molestias nobis laborum quo adipisci ratione deleniti cupiditate totam inventore, similique doloremque?</p>
+            </figure>
+        </article>
+        <section>
+            <div class="content" id="artwork1">
+                <img src="images/MIYO.svg" alt="type1">
+                <p>miyo :type</p>
+            </div>
+            <div class="content" id="artwork2">
+                <img src="images/ABSOLUTE.svg" alt="type2">
+                <p>absolute :type</p>
+            </div>
+            <div class="content" id="artwork3">
+                <img src="images/1000.svg" alt="type3">
+                <p>1000 :type</p>
+            </div>
+            <div class="content" id="artwork3">
+                <img src="images/miyoNEW.svg" alt="type3">
+                <p>miyo/2 :type</p>
+            </div>
+        </section>
+    </main>
+    <div class="footerartwork">
+        <img src="images/absolutefooter.jpg" alt="/">
+    </div>
+    <footer>
+        <p id="copyright">©absolute 2023-202x</p>
+        <p id="contact">contact</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿[Arrow]
+Path=hipfire (normal select).cur
+
+[Hand]
+Path=scope (link select).cur
+
+[IBeam]
+Path=flip stand (type).cur
+
+[Person]
+Path=target in sights (profile select).cur
+
+[Pin]
+Path=ping (location select).ani
+
+[Help]
+Path=smokescreen (help select).ani
+
+[Crosshair]
+Path=2x zoom (precision select).cur
+
+[NWPen]
+Path=laser sight (handwrite).cur
+
+[AppStarting]
+Path=fire & chamber (work in bg).ani
+
+[No]
+Path=out of ammo (unavailable).ani
+
+[Wait]
+Path=reload (busy).ani
+
+[UpArrow]
+Path=barrel (alt select).cur
+
+[SizeAll]
+Path=adjust position (move).cur
+
+[SizeNS]
+Path=adjust position (move v).cur
+
+[SizeWE]
+Path=adjust position (move h).cur
+
+[SizeNWSE]
+Path=adjust position (move slash).cur
+
+[SizeNESW]
+Path=adjust position (move bslash).cur
+

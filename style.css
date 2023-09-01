@@ -17,67 +17,11 @@
 }
 
 body{
+  cursor: url('cursor/normal.cur'), auto;
   background-color: #f9fafc;
   margin: auto;
   max-width: 100%;
 }
-
-/* MEN
-
-.navbar-container {
-  position: fixed;
-  background-color: #f9fafc;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-#menu-button {
-  font-family: 'abermono-bold', sans-serif;
-  cursor: pointer;
-  font-size: 2.5rem;
-  order: -1;
-  margin-left: 8rem;
-  padding-top: 0%;
-  position: fixed;
-}
-
-#nav-menu-items {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 16vh;
-  list-style-type: none;
-  margin-left: 10rem;
-  padding: 20px;
-  margin-top: 8%;
-  flex-direction: column;
-  align-items: center;
-  background-color: #0055ff;
-}
-
-.logo img {
-  align-self: center;
-  position: fixed;
-  margin-left: auto;
-  padding-bottom: 5%;
-  max-height: 6rem;
-  max-width: 100%;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.playercontainer{
-  position: fixed;
-  top: 40;
-  right: 0;
-  padding-top: 1%;
-  margin-right: 8rem;
-}
-
-/*
 
 /*NAV-BAR CSS*/
 
@@ -176,7 +120,7 @@ nav {
   .logo img {
     align-self: center;
     position: fixed;
-    margin-left: auto;
+    margin-left: 30px;
     padding-bottom: 1%;
     max-height: 6rem;
     max-width: 100%;
@@ -251,14 +195,13 @@ nav {
     margin: auto;
     max-width: 60%;
     margin-top: 10%;
-    background-color: ;
+    background-color: #171b2c;
     justify-content: center;
   }
 
   figure{
     display: flex;
     margin: auto;
-    margin-top: 10%;
     flex: 1;
     transform: scale(0.75);
     background-color: ;
@@ -267,9 +210,11 @@ nav {
   article p{
     font-family: 'abermono-bold', sans-serif;
     font-size: 3rem;
+    color: #f9fafc;
     background-color: ;
     width: 46rem;
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-left: 2%;
 
   }
 
@@ -282,28 +227,36 @@ nav {
     align-self: auto;
     margin: auto;
     max-width: 100%;
-    margin-top: 10rem;
+    margin-top: 25rem;
     padding-bottom: 5rem;
+    gap: 5rem;
   }
 
   section img{
-    width: 200px;
-    height: 200px;
-    transform: scale(1.5);
-    padding: 10rem;
-    padding-bottom: 1rem;
+    cursor: pointer;
+    width: 300px;
+    height: 240px;
   }
 
   section p{
     font-family: 'abermono', sans-serif;
     font-size: 2rem;
+    margin: auto;
     margin-left: 50%;
   }
 
   #artwork2 img{
     scale: 1.2;
-   }
+  }
 
+  #artwork2 p{
+    margin-left: 40%;
+  }
+
+  #artwork3 p{
+    margin-left: 60%;
+  }
+  
   footer{
     display: flex;
     background-color: #171b2c;
@@ -340,9 +293,3 @@ nav {
   margin-right: 1rem;
   padding-top: 0.5rem;
  }
-
- 
-
-
-
-

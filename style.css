@@ -17,7 +17,7 @@
 }
 
 body{
-  cursor: url('cursor/normal.cur'), auto;
+  cursor: url('cursor/1.cur'), auto;
   background-color: #f9fafc;
   margin: auto;
   max-width: 100%;
@@ -66,7 +66,6 @@ nav {
     font-family: 'abermono-bold', sans-serif;
     cursor: pointer;
     font-size: 2.5rem;
-    order: -1;
     margin-left: 8rem;
     padding-bottom: 1%;
     position: fixed;
@@ -78,12 +77,13 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 14vh;
+    height: 13rem;
+    max-height: 25rem;
     list-style-type: none;
     margin-left: 10rem;
     padding: 1.6rem;
     padding-top: 0.2rem;
-    margin-top: 3%;
+    margin-top: 6%;
     flex-direction: column;
     align-items: center;
     background-color: #171b2c;
@@ -112,17 +112,16 @@ nav {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center;
-      order: 0;
     }
     
 
   .logo img {
     align-self: center;
     position: fixed;
-    margin-left: 30px;
-    padding-bottom: 1%;
-    max-height: 6rem;
+    padding-bottom: 1rem;
+    height: 14rem;
+    width: 14rem;
+    max-height: 100%;
     max-width: 100%;
     cursor: pointer;
     z-index: 1000;
@@ -143,7 +142,6 @@ nav {
   .custom-audio-player {
     display: flex;
     align-items: center;
-    order: 1;
   }
   
   #play-pause-button {
@@ -201,10 +199,16 @@ nav {
 
   figure{
     display: flex;
-    margin: auto;
-    flex: 1;
-    transform: scale(0.75);
-    background-color: ;
+    height: 800px;
+    max-height: 1000px;
+  }
+
+  figure img{
+    margin-top: 8rem;
+    width: 50rem;
+    height: 60rem;
+    max-width: 70%;
+    max-height: 80%;
   }
 
   article p{

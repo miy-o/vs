@@ -1,0 +1,51 @@
+﻿[Crosshair]
+Path=Circle precision.ani
+
+[AppStarting]
+Path=Circle wbg.ani
+
+[UpArrow]
+Path=Circle alternate.ani
+
+[Wait]
+Path=Circle busy.ani
+
+[SizeNWSE]
+Path=Circle diagonal1.ani
+
+[SizeNESW]
+Path=Circle diagonal2.ani
+
+[NWPen]
+Path=Circle draw.ani
+
+[Help]
+Path=Circle help.cur
+
+[SizeNS]
+Path=Circle vertical.ani
+
+[SizeWE]
+Path=Circle horizontal.ani
+
+[Hand]
+Path=Circle link.ani
+
+[SizeAll]
+Path=Circle move.ani
+
+[Person]
+Path=Circle person.ani
+
+[No]
+Path=Circle unavailable.ani
+
+[Pin]
+Path=Circle location.ani
+
+[Arrow]
+Path=Circle normal.cur
+
+[IBeam]
+Path=Circle text.ani
+

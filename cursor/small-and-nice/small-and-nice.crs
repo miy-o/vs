@@ -1,0 +1,27 @@
+﻿[Arrow]
+Path=W7R Arrow.cur
+
+[SizeWE]
+Path=W7R WE.cur
+
+[SizeNS]
+Path=W7R NS.cur
+
+[SizeAll]
+Path=W7R Move.cur
+
+[SizeNWSE]
+Path=W7R NESW.cur
+
+[SizeNESW]
+Path=W7R NWSE.cur
+
+[Help]
+Path=W7R Help.cur
+
+[Hand]
+Path=W7R Link.cur
+
+[AppStarting]
+Path=W7R Back.ani
+

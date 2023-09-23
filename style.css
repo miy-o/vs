@@ -46,11 +46,11 @@ header {
 }
 
 .personalized{
-  background-image: url(images/header.jpg);
+  background-image: url(images/header3.jpg);
   background-size:auto;
   background-attachment: fixed;
   height: 25rem;
-  padding-bottom: 20rem;
+  padding-bottom: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,11 +73,15 @@ nav{
 
   #menu-button {
     display: flex;
-    font-family: 'abermono', sans-serif;
+    font-family: 'abermono-bold', sans-serif;
     align-items: center;
     cursor: pointer;
-    font-size: 3rem;
-    margin: 1rem auto auto 20rem;
+    font-size: 1.8rem;
+    margin: -9rem auto auto 5rem;
+  }
+
+  .menu-open #nav-menu-items {
+    display: block;
   }
 
   #menu-text-personalized {
@@ -88,16 +92,16 @@ nav{
     display: none;
     position: absolute;
     flex-direction: column;
-    margin: auto 20rem;
+    margin: auto 5rem;
     list-style-type: none;
-    padding: 1rem 2rem;
+    padding: 1rem 5rem 1rem 2rem;
     background-color: #171b2c;
   }
 
   .items a {
     color: #f9fafc;
-    font-size: 2rem;
-    font-family: 'abermono', sans-serif;
+    font-size: 1.6rem;
+    font-family: 'abermono-bold', sans-serif;
     text-decoration: none;
   }
 
@@ -105,16 +109,15 @@ nav{
     display: none;
     position: absolute;
     flex-direction: column;
-    margin: auto 20rem;
+    margin: auto 5rem;
     list-style-type: none;
-    padding: 1rem 2rem;
     background-color: #f9fafc ;
   }
 
   .items2 a {
     color: #171b2c;
-    font-size: 2rem;
-    font-family: 'abermono', sans-serif;
+    font-size: 1.6rem;
+    font-family: 'abermono-bold', sans-serif;
     text-decoration: none;
   }
   
@@ -146,7 +149,7 @@ nav{
 
   .playercontainer{
     display: flex;
-    margin: auto 19rem auto auto ;
+    margin: -8.5rem 6rem auto auto ;
     z-index: 1000;
   }
 

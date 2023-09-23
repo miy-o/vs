@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.addEventListener('scroll', () => {
     const scrollValue = window.scrollY;
-    header.style.backgroundPositionY = -scrollValue * 0.5 + 'px'; // Ajuste o valor '0.5' conforme necessário para controlar a intensidade do parallax
+    header.style.backgroundPositionY = -scrollValue * 0.5 + 'px'; //Parallax
   });
 
 // Volume da música
@@ -63,52 +63,51 @@ audioElement.volume = 0.2;
   ];
 
   let currentMusicIndex = parseInt(sessionStorage.getItem('currentMusicIndex')) || -1;
+  let isPlaying = false; // Variável para rastrear se a música está tocando
 
-const playRandomMusic = () => {
-    if (currentMusicIndex === -1) {
-// Play a random song when the page loads
-        currentMusicIndex = Math.floor(Math.random() * musicList.length);
-    } else {
-// Play the next song randomly
-        let nextIndex;
-        do {
-            nextIndex = Math.floor(Math.random() * musicList.length);
-        } while (nextIndex === currentMusicIndex); // Ensure the next song is different
-        currentMusicIndex = nextIndex;
-    }
+  const playRandomMusic = () => {
+      if (currentMusicIndex === -1) {
+          currentMusicIndex = Math.floor(Math.random() * musicList.length);
+      } else {
+          let nextIndex;
+          do {
+              nextIndex = Math.floor(Math.random() * musicList.length);
+          } while (nextIndex === currentMusicIndex); // Garante que a próxima música seja diferente
+          currentMusicIndex = nextIndex;
+      }
 
-    audioElement.src = musicList[currentMusicIndex];
-    audioElement.play();
-};
+      audioElement.src = musicList[currentMusicIndex];
+      audioElement.play();
+  };
 
-// Chame a função para tocar uma música aleatória ao carregar a página
-playRandomMusic();
-  
-audioElement.addEventListener('ended', () => {
-// Toca a próxima música aleatória quando a música atual terminar
-  playRandomMusic();
-});
+  // Evento para verificar quando a música termina
+  audioElement.addEventListener('ended', () => {
+      playRandomMusic();
+  });
 
-//Guarda o estado da musica
-window.addEventListener('DOMContentLoaded', () => {
+  // Verifique se a música estava sendo reproduzida ao carregar a página
   const audioPlaying = sessionStorage.getItem('audioPlaying');
   const currentTime = sessionStorage.getItem('currentTime');
 
   if (audioPlaying === 'true') {
-      audioElement.play();
-  }
-
-  if (currentTime) {
+      isPlaying = true;
       audioElement.currentTime = parseFloat(currentTime);
   }
-});
 
-window.addEventListener('beforeunload', () => {
-    sessionStorage.setItem('audioPlaying', audioElement.paused ? 'false' : 'true');
-    sessionStorage.setItem('currentTime', audioElement.currentTime);
-    sessionStorage.setItem('currentMusicIndex', currentMusicIndex);
-});
-  
+  if (currentMusicIndex !== -1) {
+      audioElement.src = musicList[currentMusicIndex];
+      if (isPlaying) {
+          audioElement.play();
+      }
+  }
+
+  // Adicione um evento para verificar quando a janela está prestes a ser fechada ou redirecionada
+  window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('audioPlaying', isPlaying ? 'true' : 'false');
+      sessionStorage.setItem('currentTime', audioElement.currentTime);
+      sessionStorage.setItem('currentMusicIndex', currentMusicIndex);
+  });
+
 // Botão de play/pause funcional
 playPauseButton.addEventListener('click', () => {
   if (audioElement.paused) {
@@ -147,23 +146,44 @@ document.addEventListener('DOMContentLoaded', () => {
 const currentPage = window.location.pathname.split('/').pop();
 menuItems.forEach(item => {
   if (item.getAttribute('href') === currentPage) {
-    item.classList.add('current');
+    item.classList.add('marked');
   }
+
+  item.addEventListener('mouseenter', () => {
+    
+    menuItems.forEach(otherItem => {
+      otherItem.classList.remove('current');
+    });
+
+    item.classList.add('current');
+  });
+
+  item.addEventListener('mouseleave', () => {
+    item.classList.remove('current');
+  });
 });
 
-// Abre/fecha o menu home
-menuButton.addEventListener('click', () => {
-  if (menuList.style.display === "none" || menuList.style.display ===  '') {
-    menuList.style.display = 'block';
-  } else {
-    menuList.style.display = 'none';
-  }
+//Abre/fecha o menu home
+menuButton.addEventListener('mouseenter', () => {
+  openMenu();
 });
+
+function openMenu() {
+  menuList.style.display = 'block';
+}
+
+menuList.addEventListener('mouseleave', () => {
+  closeMenu();
+});
+
+function closeMenu() {
+  menuList.style.display = 'none';
+}
   
-// Redirecionar o usuário para a página index.html ao clicar no logotipo
+//Redirecionar o usuário para a página index.html ao clicar no logotipo
   const logoContainer = document.getElementById('logo');
   logoContainer.addEventListener('click', () => {
-    window.location.href = 'subscribe.html';
+    window.location.href = 'absolute.html';
   });
 });
 

@@ -8,12 +8,12 @@
     <link rel="icon" type="image/x-icon" href="cursor/favicon3.ico">
     <title>absolute:home</title>
 </head>
-<body>
+<body id="my-scrollbar">
     <header>
         <nav class="navbar-container">
             <div class="box-menu">
-                <button id="menu-button"><span id="menu-text">//</span></button>
-                <ul id="nav-menu-items">
+                <button id="menu-button"><span id="menu-text">home</span></button>
+                <ul class="items" id="nav-menu-items">
                     <li class="nav-item"><a href="index.html" class="nav-links">home</a></li>
                     <li class="nav-item"><a href="projects.html" class="nav-links">projects</a></li>
                     <li class="nav-item"><a href="shop.html" class="nav-links">shop</a></li>
@@ -21,7 +21,7 @@
                     <li class="nav-item"><a href="about.html" class="nav-links">about</a></li>
                 </ul>
             </div>
-            <div class="logo" id="logo">
+            <div class="logo clickable" id="logo">
                 <img src="images/ABSOLUTE.svg" alt="Logo">
             </div>
             <div class="playercontainer">
@@ -49,10 +49,6 @@
                 <img src="images/hideki.svg" alt="type3">  
                 <p>hideki :type</p>
             </div>
-            <div class="content" id="artwork2">
-                <img src="images/ABSOLUTEnotLOGO.svg" alt="type2">
-                <p>absolute :type</p>
-            </div>
             <div class="content" id="artwork4">
                 <img src="images/miyoNEW.svg" alt="type3">  
                 <p>miyo² :type</p>
@@ -60,13 +56,12 @@
         </section>
     </main>
     <div class="footerartwork">
-        <img src="images/absolutefooter.jpg" alt="/">
+        
     </div>
     <footer>
         <p id="copyright">©absolute 2023-202x</p>
         <p id="contact">contact</p>
     </footer>
-    <script src="script.js"></script>
-    <script src="cursor.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

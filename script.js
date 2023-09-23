@@ -3,9 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioElement = customAudioPlayer.querySelector('#audio');
   const playPauseButton = customAudioPlayer.querySelector('#play-pause-button');
   const seekBar = customAudioPlayer.querySelector('#seek-bar');
+  const header = document.querySelector('header');
+  
+  window.addEventListener('scroll', () => {
+    const scrollValue = window.scrollY;
+    header.style.backgroundPositionY = -scrollValue * 0.5 + 'px'; // Ajuste o valor '0.5' conforme necessário para controlar a intensidade do parallax
+  });
 
-  // Volume da música
-  audioElement.volume = 0.2;
+// Volume da música
+audioElement.volume = 0.2;
 
   const musicList = [
     "music/RIKI 2OH2- SIDE1 (TAPE).mp3",
@@ -58,66 +64,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentMusicIndex = parseInt(sessionStorage.getItem('currentMusicIndex')) || -1;
 
-  const playRandomMusic = () => {
+const playRandomMusic = () => {
     if (currentMusicIndex === -1) {
-      // Toca a primeira música aleatória ao carregar a página
-      currentMusicIndex = Math.floor(Math.random() * musicList.length);
+// Play a random song when the page loads
+        currentMusicIndex = Math.floor(Math.random() * musicList.length);
+    } else {
+// Play the next song randomly
+        let nextIndex;
+        do {
+            nextIndex = Math.floor(Math.random() * musicList.length);
+        } while (nextIndex === currentMusicIndex); // Ensure the next song is different
+        currentMusicIndex = nextIndex;
     }
 
     audioElement.src = musicList[currentMusicIndex];
     audioElement.play();
-  };
+};
 
-  // Chame a função para tocar uma música aleatória ao carregar a página
+// Chame a função para tocar uma música aleatória ao carregar a página
+playRandomMusic();
+  
+audioElement.addEventListener('ended', () => {
+// Toca a próxima música aleatória quando a música atual terminar
   playRandomMusic();
+});
 
-  audioElement.addEventListener('ended', () => {
-    // Toca a próxima música aleatória quando a música atual terminar
-    currentMusicIndex = (currentMusicIndex + 1) % musicList.length;
-    playRandomMusic();
-  });
+//Guarda o estado da musica
+window.addEventListener('DOMContentLoaded', () => {
+  const audioPlaying = sessionStorage.getItem('audioPlaying');
+  const currentTime = sessionStorage.getItem('currentTime');
 
-  //Guarda o estado da musica
-  window.addEventListener('DOMContentLoaded', () => {
-    const audioPlaying = sessionStorage.getItem('audioPlaying');
-    const currentTime = sessionStorage.getItem('currentTime');
-  
-    if (audioPlaying === 'true') {
+  if (audioPlaying === 'true') {
       audioElement.play();
-    }
-  
-    if (currentTime) {
+  }
+
+  if (currentTime) {
       audioElement.currentTime = parseFloat(currentTime);
-    }
-  });
-  window.addEventListener('beforeunload', () => {
+  }
+});
+
+window.addEventListener('beforeunload', () => {
     sessionStorage.setItem('audioPlaying', audioElement.paused ? 'false' : 'true');
     sessionStorage.setItem('currentTime', audioElement.currentTime);
     sessionStorage.setItem('currentMusicIndex', currentMusicIndex);
-  });
+});
+  
+// Botão de play/pause funcional
+playPauseButton.addEventListener('click', () => {
+  if (audioElement.paused) {
+    audioElement.play();
+  } else {
+    audioElement.pause();
+  }
+});
 
-  // Botão de play/pause funcional
-  playPauseButton.addEventListener('click', () => {
-    if (audioElement.paused) {
-      audioElement.play();
-    } else {
-      audioElement.pause();
-    }
-  });
+audioElement.addEventListener('play', () => {
+  playPauseButton.src = 'icons/pause.svg';
+});
 
-  audioElement.addEventListener('play', () => {
-    playPauseButton.src = 'icons/pause.svg';
-  });
+audioElement.addEventListener('pause', () => {
+  playPauseButton.src = 'icons/play.svg';
+});
 
-  audioElement.addEventListener('pause', () => {
-    playPauseButton.src = 'icons/play.svg';
-  });
-
-  // Seek-bar funcional
-  seekBar.addEventListener('input', () => {
-    const seekTime = (audioElement.duration / 100) * seekBar.value;
-    audioElement.currentTime = seekTime;
-  });
+// Seek-bar funcional
+seekBar.addEventListener('input', () => {
+  const seekTime = (audioElement.duration / 100) * seekBar.value;
+  audioElement.currentTime = seekTime;
+});
 
   audioElement.addEventListener('timeupdate', () => {
     const progress = (audioElement.currentTime / audioElement.duration) * 100;
@@ -127,30 +140,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuButton = document.getElementById('menu-button');
-  const menuList = document.getElementById('nav-menu-items');
+  const menuList = document.getElementsByClassName('items')[0];
   const menuItems = menuList.querySelectorAll('.nav-links');
 
-  // Adicione a classe "current" ao item do menu da página atual
-  const currentPage = window.location.pathname.split('/').pop();
-  menuItems.forEach(item => {
-    if (item.getAttribute('href') === currentPage) {
-      item.classList.add('current');
-    }
-  });
+// Adicione a classe "current" ao item do menu da página atual
+const currentPage = window.location.pathname.split('/').pop();
+menuItems.forEach(item => {
+  if (item.getAttribute('href') === currentPage) {
+    item.classList.add('current');
+  }
+});
 
-  // Abre/fecha o menu home
-  menuButton.addEventListener('click', () => {
-    if (menuList.style.display === "none" || menuList.style.display ===  '') {
-      menuList.style.display = 'block';
-    } else {
-      menuList.style.display = 'none';
-    }
-  });
+// Abre/fecha o menu home
+menuButton.addEventListener('click', () => {
+  if (menuList.style.display === "none" || menuList.style.display ===  '') {
+    menuList.style.display = 'block';
+  } else {
+    menuList.style.display = 'none';
+  }
+});
   
-  // Redirecionar o usuário para a página index.html ao clicar no logotipo
+// Redirecionar o usuário para a página index.html ao clicar no logotipo
   const logoContainer = document.getElementById('logo');
   logoContainer.addEventListener('click', () => {
-    window.location.href = 'index.html';
+    window.location.href = 'subscribe.html';
   });
 });
 

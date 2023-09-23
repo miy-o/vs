@@ -19,8 +19,10 @@
 body{
   cursor: url('cursor/1.cur'), auto;
   background-color: #f9fafc;
-  margin: auto;
-  max-width: 100%;
+  width: 99vw;
+  height: 100%;
+  margin: 0rem;
+  overflow-x: hidden;
 }
 
 /*NAV-BAR CSS*/

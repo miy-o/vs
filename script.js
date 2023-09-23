@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "music/VOLLYBALL.mp3",
   ];
 
-  let currentMusicIndex = parseInt(localStorage.getItem('currentMusicIndex')) || -1;
+  let currentMusicIndex = parseInt(sessionStorage.getItem('currentMusicIndex')) || -1;
 
   const playRandomMusic = () => {
     if (currentMusicIndex === -1) {
@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Guarda o estado da musica
   window.addEventListener('DOMContentLoaded', () => {
-    const audioPlaying = localStorage.getItem('audioPlaying');
-    const currentTime = localStorage.getItem('currentTime');
+    const audioPlaying = sessionStorage.getItem('audioPlaying');
+    const currentTime = sessionStorage.getItem('currentTime');
   
     if (audioPlaying === 'true') {
       audioElement.play();
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   window.addEventListener('beforeunload', () => {
-    localStorage.setItem('audioPlaying', audioElement.paused ? 'false' : 'true');
-    localStorage.setItem('currentTime', audioElement.currentTime);
-    localStorage.setItem('currentMusicIndex', currentMusicIndex);
+    sessionStorage.setItem('audioPlaying', audioElement.paused ? 'false' : 'true');
+    sessionStorage.setItem('currentTime', audioElement.currentTime);
+    sessionStorage.setItem('currentMusicIndex', currentMusicIndex);
   });
 
   // Botão de play/pause funcional

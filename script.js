@@ -38,6 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "music/STONEKEEEEP.mp3",
     "music/TRACK MEET.mp3",
     "music/VOLLYBALL.mp3",
+    "music/JALEN TUNA-blackfin.mp3",
+    "music/JALEN TUNA-caught me in herself.mp3",
+    "music/JALEN TUNA-im over you.mp3",
+    "music/JALEN TUNA-JUST ANOTHA FIDM BITCH.mp3",
+    "music/JALEN TUNA-KOT.mp3",
+    "music/JALEN TUNA-LiNdSaY & PARKEr.mp3",
+    "music/JALEN TUNA-magic fat girl.mp3",
+    "music/JALEN TUNA-magic fat girl 2.mp3",
+    "music/JALEN TUNA-MINE.mp3",
+    "music/JALEN TUNA-Nina.mp3",
+    "music/JALEN TUNA-OLD DAYZ.mp3",
+    "music/JALEN TUNA-pillow.mp3",
+    "music/JALEN TUNA-STALKERLYFE NINALYFE.mp3",
+    "music/JALEN TUNA-water rough.mp3",
+    "music/JALEN TUNA-whitefin.mp3",
+    "music/JALEN TUNA-YOU A TRICK.mp3",
   ];
 
   let currentMusicIndex = parseInt(sessionStorage.getItem('currentMusicIndex')) || -1;
@@ -124,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Abre/fecha o menu home
   menuButton.addEventListener('click', () => {
-    if (menuList.style.display === 'none') {
+    if (menuList.style.display === "none" || menuList.style.display ===  '') {
       menuList.style.display = 'block';
     } else {
       menuList.style.display = 'none';

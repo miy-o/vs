@@ -22,26 +22,27 @@
                 </ul>
             </div>
             <div class="logo" id="logo">
-                <img src="images/ABSOLUTEwhite.svg" alt="Logo">
+                <img src="images/ABSOLUTEwhite.svg" alt="Logo" draggable="false">
             </div>
             <div class="playercontainer">
                 <div class="custom-audio-player">
                     <audio id="audio" src="music/RIKI 2OH2- SIDE1 (TAPE).mp3" autoplay></audio>
-                    <img id="play-pause-button" src="icons/pause.svg">
+                    <img id="play-pause-button" src="icons/pause.svg" draggable="false">
                     <input type="range" id="seek-bar" min="0" value="0">
                 </div>    
             </div>    
         </nav>
     </header>
     <main>
-        <article id="main-content">
-        </article>
-        <section>
-        </section>
-    </main>
-    <div class="footerartwork">
-        
-    </div>
+        <div class="message">
+            <p>Want to receive updates and news? 
+                <br>Sign up with your email</p>
+            <form id="signup-form">
+                <input form="novalidateform" type="email" id="emailsus" placeholder="email@email.com" required>
+                <button type="submit" id="buttonsu">sign up</button>
+            </form>
+        </div>
+    </main>   
     <footer>
         <p id="copyright">©absolute 2023-202x</p>
         <p id="contact">contact</p>

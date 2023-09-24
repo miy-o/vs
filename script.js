@@ -60,6 +60,7 @@ audioElement.volume = 0.2;
     "music/JALEN TUNA-water rough.mp3",
     "music/JALEN TUNA-whitefin.mp3",
     "music/JALEN TUNA-YOU A TRICK.mp3",
+    "music/JALEN TUNA-TOY MACHINE SHIRTZ.mp3",
   ];
 
   let currentMusicIndex = parseInt(sessionStorage.getItem('currentMusicIndex')) || -1;

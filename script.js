@@ -67,41 +67,43 @@ const musicList = [
 let currentMusicIndex = parseInt(localStorage.getItem('currentMusicIndex')) || -1;
 let isPlaying = false; // Variável para rastrear se a música está tocando
 
-const playRandomMusic = () => {
+  const playRandomMusic = () => {
     if (currentMusicIndex === -1) {
-        currentMusicIndex = Math.floor(Math.random() * musicList.length);
-    } else {
-        let nextIndex;
-        do {
-            nextIndex = Math.floor(Math.random() * musicList.length);
-        } while (nextIndex === currentMusicIndex); // Garante que a próxima música seja diferente
-        currentMusicIndex = nextIndex;
+      // Toca a primeira música aleatória ao carregar a página
+      currentMusicIndex = Math.floor(Math.random() * musicList.length);
     }
 
     audioElement.src = musicList[currentMusicIndex];
     audioElement.play();
-};
+  };
 
-// Evento para verificar quando a música termina
-audioElement.addEventListener('ended', () => {
+  // Chame a função para tocar uma música aleatória ao carregar a página
+  playRandomMusic();
+
+  audioElement.addEventListener('ended', () => {
+    // Toca a próxima música aleatória quando a música atual terminar
+    currentMusicIndex = (currentMusicIndex + 1) % musicList.length;
     playRandomMusic();
-});
+  });
 
-// Verifique se a música estava sendo reproduzida ao carregar a página
-const audioPlaying = localStorage.getItem('audioPlaying');
-const currentTime = localStorage.getItem('currentTime');
+  //Guarda o estado da musica
+  window.addEventListener('DOMContentLoaded', () => {
+    const audioPlaying = localStorage.getItem('audioPlaying');
+    const currentTime = localStorage.getItem('currentTime');
 
-if (audioPlaying === 'true') {
-    isPlaying = true;
-    audioElement.currentTime = parseFloat(currentTime);
-}
-
-if (currentMusicIndex !== -1) {
-    audioElement.src = musicList[currentMusicIndex];
-    if (isPlaying) {
-        audioElement.play();
+    if (audioPlaying === 'true') {
+      audioElement.play();
     }
-}
+
+    if (currentTime) {
+      audioElement.currentTime = parseFloat(currentTime);
+    }
+  });
+  window.addEventListener('beforeunload', () => {
+    localStorage.setItem('audioPlaying', audioElement.paused ? 'false' : 'true');
+    localStorage.setItem('currentTime', audioElement.currentTime);
+    localStorage.setItem('currentMusicIndex', currentMusicIndex);
+  });
 
 // Botão de play/pause funcional
 playPauseButton.addEventListener('click', () => {

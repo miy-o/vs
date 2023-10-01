@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" a href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="cursor/favicon3.ico">
     <title>absolute:home</title>
 </head>
-<body id="my-scrollbar">
+<body>
     <header>
+        <!-- Container da NAV -->
         <nav class="navbar-container">
+            <!-- MENU -->
             <div class="box-menu">
+                <!-- Texto que aparece no menu. -->
                 <button id="menu-button"><span id="menu-text">:home</span></button>
+                <!-- Items -->
                 <ul class="items" id="nav-menu-items">
                     <li class="nav-item"><a href="index.html" class="nav-links">home</a></li>
                     <li class="nav-item"><a href="projects.html" class="nav-links">projects</a></li>
@@ -21,9 +27,16 @@
                     <li class="nav-item"><a href="about.html" class="nav-links">about</a></li>
                 </ul>
             </div>
+            <!-- MENU-Hamburger -->
+            <div class="hamburger">
+                <span class="barra"></span>
+                <span class="barra"></span>
+            </div>
+            <!-- Logo -->
             <div class="logo clickable" id="logo">
                 <img src="images/ABSOLUTE.svg" alt="Logo" draggable="false">
             </div>
+            <!-- Player de Musica -->
             <div class="playercontainer">
                 <div class="custom-audio-player">
                     <audio id="audio" src="music/RIKI 2OH2- SIDE1 (TAPE).mp3" autoplay></audio>
@@ -34,34 +47,69 @@
         </nav>
     </header>
     <main>
-        <article id="main-content">
-            <figure class="content" id="main-artwork">
-                <img src="images/reescaled.jpg" alt="mainartwork" id="artwork" draggable="false">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis unde accusamus a! Nobis mollitia quo commodi velit! Iusto molestias nobis laborum quo adipisci ratione deleniti cupiditate totam inventore, similique doloremque?</p>
-            </figure>
-        </article>
+        <!-- Carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/slide2.jpg" class="d-block w-100" alt="slide1">
+              </div>
+              <div class="carousel-item">
+                <img src="images/slide1.jpg" class="d-block w-100" alt="slide2">
+              </div>
+              <div class="carousel-item">
+                <img src="images/slide3.jpg" class="d-block w-100" alt="slide3">
+              </div>
+            </div>
+          </div>
         <section>
+            <!-- Section com mais artworks -->
             <div class="content" id="artwork1">
-                <img src="images/MIYO.svg" alt="type1" draggable="false">
+                <img src="images/MIYO.svg" alt="type1" draggable="false" class="fluid">
                 <p>miyo :type</p>
             </div>
             <div class="content" id="artwork3">
-                <img src="images/hideki.svg" alt="type2" draggable="false">  
+                <img src="images/hideki.svg" alt="type2" draggable="false" class="fluid">  
                 <p>hideki :type</p>
             </div>
             <div class="content" id="artwork4">
-                <img src="images/miyoNEW.svg" alt="type3" draggable="false">  
+                <img src="images/miyoNEW.svg" alt="type3" draggable="false" class="fluid">  
                 <p>miyo² :type</p>
             </div>  
         </section>
     </main>
-    <div class="footerartwork">
-        
-    </div>
-    <footer>
-        <p id="copyright">©absolute 2023-202x</p>
-        <p id="contact">contact</p>
+    <!-- Footer -->
+    <footer class="pt-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Coluna 1 -->
+                <div class="col-md-6">
+                    <p class="text-start">absolute 2023-202x</p>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end">
+                        <ul class="list-unstyled d-flex mb-0">
+                            <li><a href="https://twitter.com/lurchstrafe" class="fa fa-twitter"></a></li>
+                            <li><a href="https://www.instagram.com/burensou/" class="fa fa-instagram"></a></li>
+                            <li><a href="https://t.co/fWcrILDkSk" class="fa fa-youtube-play"></a></li>
+                            <li class="ms-3"><a href="https://discord.com/users/261513264486285314" class="text-decoration-none">contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+    <!-- Dependencias -->
     <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>

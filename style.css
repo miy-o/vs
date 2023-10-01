@@ -39,7 +39,6 @@ body{
 
 header {
   height: 25rem;
-  padding-bottom: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +49,7 @@ header {
   background-size:auto;
   background-attachment: fixed;
   height: 25rem;
-  padding-bottom: 7rem;
+  padding: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +95,7 @@ nav{
     list-style-type: none;
     padding: 1rem 5rem 1rem 2rem;
     background-color: #171b2c;
-    width: 8rem;
+    width: 16rem;
   }
 
   .items a {
@@ -114,7 +113,7 @@ nav{
     margin: -2rem 2rem auto 5rem;
     list-style-type: none;
     background-color: #171b2c8c;
-    width: 8rem;
+    width: 16rem;
   }
 
   .items2 a {
@@ -127,6 +126,33 @@ nav{
   
   .current::before {
     content: "<";
+  }
+
+  .hamburger{
+    display: none;
+    cursor: pointer;
+  }
+
+  .barra{
+    display: block;
+    width: 2.5rem;
+    height: .2rem;
+    margin: .5rem auto auto auto;
+    color: #111111;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #111111;
+  }
+
+  .barra2{
+    display: block;
+    width: 2.5rem;
+    height: .2rem;
+    margin: .5rem auto auto auto;
+    color: #f9fafc;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9fafc;
   }
 
   /*>>//MENU - HOME//<<*/
@@ -153,13 +179,13 @@ nav{
 
   .playercontainer{
     display: flex;
-    margin: -8.5rem 6rem auto auto ;
+    margin: -8rem 3rem auto auto ;
     z-index: 1000;
   }
 
   .custom-audio-player {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
   }
   
@@ -170,7 +196,7 @@ nav{
   }
   
   #seek-bar {
-    width: 100%;
+    width: 60%;
     height: 2px; 
     background-color: black; 
     appearance: none;
@@ -186,6 +212,24 @@ nav{
     cursor: url('cursor/scope.cur'), pointer;
   }
 
+  #seek-bar2 {
+    width: 60%;
+    height: 2px; 
+    background-color: #f9fafc; 
+    appearance: none;
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+  
+  #seek-bar2::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.5rem; 
+    height: 0.8rem;
+    background-image: url('icons/select2.svg');
+    background-size: cover;
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+
+
   /*>>//MUSIC-PLAYER//<<*/
 
   /*NAV-BAR CSS*/
@@ -199,30 +243,14 @@ nav{
     max-width: 100%;
   }
 
-  article{
+  .main-content{
     display: flex;
-    flex: 1;
-    align-items: center;
     align-self: auto;
-    margin: auto;
-    max-width: 60%;
-    margin-top: 10%;
+    margin: 15rem auto;
+    width: 85%;
+    max-width: 85%;
     background-color: #171b2c;
-    justify-content: center;
-  }
-
-  figure{
-    display: flex;
-    height: 800px;
-    max-height: 1000px;
-  }
-
-  figure img{
-    margin-top: 8rem;
-    width: 50rem;
-    height: 60rem;
-    max-width: 70%;
-    max-height: 80%;
+    justify-content: center; 
   }
 
   article p{
@@ -262,22 +290,15 @@ nav{
   footer{
     display: flex;
     background-color: #171b2c;
-    align-items: center;
-    justify-content: center;
-    gap: 85%;
   }
 
-.footerartwork{
-  background-color: #171b2c;
-}
-
- .footerartwork img {
-  display: flex;
-  align-self: auto;
-  margin: auto;
-  max-width: 100%;
-  
- }
+  .fa {
+    text-decoration: none;
+    color: #f9fafc;
+    width: 3rem;
+    font-size: 1.5rem;
+    margin-top: .2rem;
+  }
 
  footer p{
   font-family: 'abermono', sans-serif;
@@ -285,14 +306,20 @@ nav{
   color: #f9fafc;
  }
 
- /*/botao css sign up/*/
+ footer a{
+  font-family: 'abermono', sans-serif;
+  font-size: 1.5rem;
+  color: #f9fafc;
+  cursor: url('cursor/scope.cur'), pointer;
+ }
 
+ /*/botao css sign up/*/
 
  .message {
   text-align: center;
   height: 100%;
   margin: 30rem;
-  margin-top: 20rem;
+  margin-top: 30rem;
 }
 
 .message p{
@@ -340,3 +367,109 @@ button:hover {
   background-color: #171b2c13;
 }
  
+
+@media(max-width:768px){
+
+  header,.personalized {
+    height: 25rem;
+
+  }
+
+  .hamburger{
+    display: block;
+    margin: -15rem 0 1rem 2rem;
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+
+  .hamburger.active .barra:nth-child(1){
+    transform: translateY(3.4px) rotate(25deg);
+  }
+
+  .hamburger.active .barra:nth-child(2){
+    transform: translateY(-3.4px) rotate(-25deg);
+  }
+
+  .items2 {
+    position: absolute;
+    flex-direction: column;
+    margin: auto auto;
+    list-style-type: none;
+    background-color: #f9fafc;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .items2 a {
+    color: #171b2c;
+    font-size: 5.5rem;
+    font-family: 'abermono-bold', sans-serif;
+    text-decoration: none;
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+
+  .items {
+    position: absolute;
+    flex-direction: column;
+    margin: auto auto;
+    list-style-type: none;
+    background-color: #f9fafc;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .items a {
+    color: #111111;
+    font-size: 5.5rem;
+    font-family: 'abermono-bold', sans-serif;
+    text-decoration: none;
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+
+  .menu-active{
+    display: block;
+  }
+
+  .logo.active, #seek-bar2, #seek-bar, #menu-button, #play-pause-button.active, footer {
+    display: none;
+  }
+  
+  .playercontainer{
+    display: flex;
+    margin: -9rem 3rem auto auto ;
+    z-index: 1000;
+  }
+
+  #play-pause-button {
+    width: 2.2rem; 
+    height: 2rem; 
+    cursor: url('cursor/scope.cur'), pointer;
+  }
+
+  section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20rem auto;
+    gap: 20rem;
+  }
+
+  .message p{
+    font-family: 'abermono', sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .message {
+    text-align: center;
+    height: 100%;
+    margin: 30rem auto;
+    margin-top: 30rem;
+  }
+
+  footer{
+    display: none;
+  }
+
+}

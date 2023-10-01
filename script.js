@@ -4,6 +4,20 @@ const audioElement = customAudioPlayer.querySelector('#audio');
 const playPauseButton = customAudioPlayer.querySelector('#play-pause-button');
 const seekBar = customAudioPlayer.querySelector('#seek-bar');
 const header = document.querySelector('header');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.items');
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("menu-active");
+  
+});
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener
+  ("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
   
 //Parallax
 window.addEventListener('scroll', () => {

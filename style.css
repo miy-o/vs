@@ -443,6 +443,11 @@ button:hover {
     text-decoration: none;
     cursor: url('cursor/scope.cur'), pointer;
   }
+  
+  .logo img {
+    height: 12rem;
+    width: 12rem;
+  }
 
   .menu-active{
     display: block;

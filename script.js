@@ -6,10 +6,17 @@ const seekBar = customAudioPlayer.querySelector('#seek-bar');
 const header = document.querySelector('header');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.items');
+const body = document.querySelector('body');
+const logo = document.querySelector('.logo');
+const mediaButton = document.querySelector('#play-pause-button');
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("menu-active");
+  body.classList.toggle("active");
+  logo.classList.toggle("active");
+  mediaButton.classList.toggle("active");
+  
   
 });
 

@@ -370,8 +370,17 @@ button:hover {
 
 @media(max-width:768px){
 
+  body.active{
+    overflow-y: hidden;
+  }
+
   header,.personalized {
     height: 25rem;
+  }
+
+  .personalized.active{
+    background-image: none;
+    background-color: #f9fafc;
 
   }
 
@@ -385,8 +394,18 @@ button:hover {
     transform: translateY(3.4px) rotate(25deg);
   }
 
+  .hamburger.active .barra2:nth-child(1){
+    transform: translateY(3.4px) rotate(25deg);
+    background-color: #171b2c;
+  }
+
   .hamburger.active .barra:nth-child(2){
     transform: translateY(-3.4px) rotate(-25deg);
+  }
+
+  .hamburger.active .barra2:nth-child(2){
+    transform: translateY(-3.4px) rotate(-25deg);
+    background-color: #171b2c;
   }
 
   .items2 {

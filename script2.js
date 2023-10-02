@@ -8,12 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.items2');
     const logo = document.querySelector('.logo');
     const mediaButton = document.querySelector('#play-pause-button');
+    const body = document.querySelector('body');
+    const headerPerso = document.querySelector('.personalized');
 
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
       navMenu.classList.toggle("menu-active");
       logo.classList.toggle("active");
       mediaButton.classList.toggle("active");
+      body.classList.toggle("active");
+      headerPerso.classList.toggle("active");
 
     });
 
